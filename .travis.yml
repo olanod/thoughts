@@ -1,0 +1,16 @@
+language: generic
+before_script:
+- wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VER}/hugo_${HUGO_VER}_Linux-64bit.deb
+- sudo dpkg -i hugo_${HUGO_VER}_Linux-64bit.deb
+script: hugo
+deploy:
+  provider: s3
+  access_key_id: AKIAIDIJJDU2RN5TRN5Q
+  secret_access_key:
+    secure: rcu+v2HOzTHFPeZRrdel6MLrC03Hfm7vn5Yw6TI5c0sZ3Glm9hGaAH+PZqiHHR+qKR+RFBwu5dkUH2AfwGTagr8o4zs22JxQ2ZnyEV/utqDPV7eOj0+f0AvdWWuzSM0fqHZm1HGqFs/chSpOe/exRRbfx9FL8xm3ggrHISCsXtkbldqN5Vtse6yBDUdgpXjJprDKuHyIOpWnxmCGt8vxBu86NYQvG9sInMx6C+ZgY//Rlc+RMFk+5c7xE40YB64C6rzUN2HQl+eDELi9oZCyf+6qMb47D9CRTpHzx/4P0wkrR5KmaUYiVz4OP9HJVX2N5GIeCZj7ACTOdhPlsS7ILz+uNLfndb7Y5yorbJimLEHje45hq/HlixWf9dv7xtEQrY+gWQtodVjviq9aCYYa3QrABovtSe1dDPQvT7vaqkjjetFnujXJE0IpQTvkBAEEobkE39vM+71EJYzpRoMwklhmbIreII68uJx6bzZJglGiaCIM5gzoSG6knAjCv4CYLAU8RMCxi9wkuRY+yCsmCOfsKBylyaGse7mELQCaaXWbtGrP1EWjxtynPtS0M+QJe1vqC64x7SXFAeo/RTs3ncTz1/xhUs+MJR1sdiKM2gnhQ0QpPzxKy255kVr00YTFelNVamyeel94Flv0Ab/LKSxOzlVrVqscfXN0jLvk9GE=
+  bucket: olanod-pages
+  upload-dir: thoughts
+  local_dir: public
+  region: eu-central-1
+  skip_cleanup: true
+  acl: public_read
