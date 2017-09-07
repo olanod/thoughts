@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#242424">
+    <base href="{{ .Site.BaseURL }}">
+    <title>{{ block "title" . }}{{.Title}}{{ end }}</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      {{ block "header" . }}
+      <h1>{{ .Title }}</h1>
+      {{ end }}
+    </header>
+    <main>{{ block "main" . }}{{ .Content }}{{ end }}</main>
+    <footer>
+      {{ block "footer" . }}
+      <small>&copy; <a href="https://github.com/olanod" rel="author">olanod</a></small>
+      {{ end }}
+    </footer>
+  </body>
+</html>
