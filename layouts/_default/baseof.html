@@ -9,16 +9,14 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <header>
-      {{ block "header" . }}
-      <h1>{{ .Title }}</h1>
-      {{ end }}
-    </header>
-    <main>{{ block "main" . }}{{ .Content }}{{ end }}</main>
-    <footer>
-      {{ block "footer" . }}
-      <small>&copy; <a href="https://github.com/olanod" rel="author">olanod</a></small>
-      {{ end }}
+    <main>
+      <header>
+        {{ block "header" . }}<h1>{{ .Title }}</h1>{{ end }}
+      </header>
+      {{ block "main" . }}{{ .Content }}{{ end }}
+    </main>
+    <footer>{{ block "footer" . }}
+      &copy; <a href="https://github.com/olanod" rel="author">olanod</a>{{ end }}
     </footer>
   </body>
 </html>

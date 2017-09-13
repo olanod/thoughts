@@ -2,7 +2,7 @@
 {{ .Content }}
 {{ range .Data.Pages }}
 <article class="summary">
-  <time datetime="{{ .Date.Unix }}"><small>🕘</small> {{ .Date.Format "Mon Jan 2, 2006" }}</time>
+  <time datetime="{{ .Date.Unix }}"><small>{{ .Param "time" }}</small> {{ .Date.Format "Mon Jan 2, 2006" }}</time>
   <h2><a href="{{.Permalink}}">{{ .Title }}</a></h2>
   {{ .Summary }}
 </article>

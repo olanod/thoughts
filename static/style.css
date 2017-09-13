@@ -1,44 +1,60 @@
 :root {
     --color-main: #09D;
+    --color-main-light: #81AFC4;
     --color-bg: #FDFDFD;
     --color-title: #4D4D4D;
     --color-text: #222;
     --color-text-light: #666;
+
+    --text-size: calc(0.9em + 0.5vmin);
+    --text-line-size: calc(var(--text-size) * 1.4);
 }
 
 html, body { margin: 0; padding: 0 }
 body {
+    --gap-size: calc(1rem + 4vmin);
+    --content-size: calc(50rem + 15vw);
     background-color: var(--color-bg);
+    background-image:
+    repeating-linear-gradient(-45deg, transparent, transparent 89px, var(--color-text-light) 90px),
+    repeating-linear-gradient(45deg, transparent, transparent 89px, var(--color-text-light) 90px),
+    repeating-linear-gradient(45deg, transparent, transparent 29px, var(--color-main-light) 30px),
+    repeating-linear-gradient(-45deg, transparent, transparent 29px, var(--color-main-light) 30px);
     color: var(--color-text);
     display: grid;
     font-family: sans-serif;
     grid-template-areas:
-    ". header ."
+    ". . ."
     ". main ."
+    ". . ."
     "footer footer footer";
-    grid-template-columns: minmax(1rem, 1fr) minmax(0, 50rem) minmax(1rem, 1fr);
-    grid-template-rows: min-content auto 2rem;
+    grid-template-columns: 1fr minmax(0, var(--content-size)) 1fr;
+    grid-template-rows: var(--gap-size) minmax(min-content, 50vh) minmax(var(--gap-size), 1fr) 2.5rem;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
-header { grid-area: header; }
+main {
+    background: white;
+    box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    grid-area: main;
+    padding: 1rem 2rem;
+}
 
-nav { grid-aread: nav; }
-
-main { grid-area: main; }
-
-h1, h2 { color: var(--color-title); }
+h1, h2, h3 { color: var(--color-title); }
 
 h1 {
     font-size: calc(1.5em + 4vmin);
-    margin: 6vmin 0 2vmin;
-    white-space: nowrap;
+    margin: 2vmin 0;
 }
 
-hr {
-    border: 1px solid var(--color-main);
+article {
+    font-size: var(--text-size);
+    line-height: var(--text-line-size);
 }
 
+hr { border: 1px solid var(--color-main); }
 
 a {
     text-decoration: none;
@@ -46,28 +62,17 @@ a {
 }
 a:hover, a:focus {
     text-decoration: underline;
-}
-a:focus {
     outline: none;
 }
 
 footer {
     align-items: center;
-    background: var(--color-main);
+    background: linear-gradient(to bottom, var(--color-text), var(--color-text) 50%, var(--color-main) 50%, var(--color-main));
     color: var(--color-bg);
     display: flex;
     grid-area: footer;
     justify-content: center;
     position: relative;
-}
-footer::before {
-    content: '';
-    display: block;
-    height: 0.5rem;
-    background: var(--color-text);
-    position: absolute;
-    width: 100%;
-    bottom: 100%;
 }
 footer a {
     color: var(--color-bg);
@@ -75,8 +80,7 @@ footer a {
 
 /* article detail */
 article.long p {
-    line-height: 1.5rem;
-    margin: 2rem 0;
+    margin: calc(1rem + 2vmin) 0;
 }
 article.long p:last-of-type {
     margin-bottom: 5rem;
@@ -85,7 +89,7 @@ article.long p:last-of-type {
 
 /* article list */
 article.summary {
-    margin: 3.5rem 0;
+    margin: calc(1rem + 3vmin) 0;
 }
 article.summary h2 {
     margin: 0.8rem 0 1rem;

@@ -1,6 +1,7 @@
 ---
 title: "👋 Hello Mundo"
 date: 2017-08-24T18:08:54+02:00
+time: 🕘
 draft: false
 ---
 
