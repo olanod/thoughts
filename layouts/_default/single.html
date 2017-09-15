@@ -1,3 +1,12 @@
 {{ define "main" }}<hr>
-<article class="long">
-  {{ .Content }}</article>{{ end }}
+<article class="long">{{ .Content }}</article>
+{{ end }}
+
+{{ define "aside" }}
+<aside>
+  <a
+    href="{{ printf "%s/edit/master/content/%s" $.Site.Params.repoURL .File.Path }}"
+    target="_blank"
+    title="Because I'm still a shity writer">Suggest edit ✍️</a>
+</aside>
+{{ end }}

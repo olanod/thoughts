@@ -15,6 +15,7 @@
       </header>
       {{ block "main" . }}{{ .Content }}{{ end }}
     </main>
+    {{ block "aside" . }}{{ end }}
     <footer>{{ block "footer" . }}
       &copy; <a href="https://github.com/olanod" rel="author">olanod</a>{{ end }}
     </footer>

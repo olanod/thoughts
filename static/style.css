@@ -1,19 +1,19 @@
 :root {
     --color-main: #09D;
-    --color-main-light: #81AFC4;
+    --color-main-light: #ACE;
     --color-bg: #FDFDFD;
     --color-title: #4D4D4D;
     --color-text: #222;
-    --color-text-light: #666;
+    --color-text-light: #999;
 
-    --text-size: calc(0.9em + 0.5vmin);
-    --text-line-size: calc(var(--text-size) * 1.4);
+    --text-size: calc(0.85em + 0.3vmin);
+    --text-line-size: calc(var(--text-size) * 1.6);
+    --gap-size: 5vmin;
+    --content-size: calc(40rem + 15vw);
 }
 
 html, body { margin: 0; padding: 0 }
 body {
-    --gap-size: calc(1rem + 4vmin);
-    --content-size: calc(50rem + 15vw);
     background-color: var(--color-bg);
     background-image:
     repeating-linear-gradient(-45deg, transparent, transparent 89px, var(--color-text-light) 90px),
@@ -26,10 +26,10 @@ body {
     grid-template-areas:
     ". . ."
     ". main ."
-    ". . ."
+    ". aside ."
     "footer footer footer";
     grid-template-columns: 1fr minmax(0, var(--content-size)) 1fr;
-    grid-template-rows: var(--gap-size) minmax(min-content, 50vh) minmax(var(--gap-size), 1fr) 2.5rem;
+    grid-template-rows: var(--gap-size) minmax(min-content, 60vh) minmax(var(--gap-size), 1fr) 2.5rem;
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -39,7 +39,13 @@ main {
     box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.3);
     box-sizing: border-box;
     grid-area: main;
-    padding: 1rem 2rem;
+    padding: 1rem var(--gap-size);
+}
+
+aside {
+    font-size: calc(var(--text-size) * 0.8);
+    grid-area: aside;
+    text-align: right;
 }
 
 h1, h2, h3 { color: var(--color-title); }
@@ -92,7 +98,10 @@ article.summary {
     margin: calc(1rem + 3vmin) 0;
 }
 article.summary h2 {
-    margin: 0.8rem 0 1rem;
+    margin: 0.4rem 0 0.8rem;
+}
+article.summary p {
+    margin: 0;
 }
 article.summary time {
     font-size: 0.9em;

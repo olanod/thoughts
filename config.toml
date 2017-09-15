@@ -1,3 +1,6 @@
-baseURL = "/thoughts/"
+baseURL = "https://olanod.com/thoughts/"
 languageCode = "en-us"
 title = "🤔 Thoughts"
+
+[params]
+repoURL = "https://github.com/olanod/thoughts"
