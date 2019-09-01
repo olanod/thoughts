@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ .Content }}
-{{ range .Data.Pages }}
+{{ range .Site.RegularPages }}
 <article class="summary">
   <time datetime="{{ .Date.Unix }}"><small>{{ .Param "time" }}</small> {{ .Date.Format "Mon Jan 2, 2006" }}</time>
   <h2><a href="{{.Permalink}}">{{ .Title }}</a></h2>
