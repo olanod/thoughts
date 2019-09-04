@@ -91,8 +91,25 @@ footer a {
 article.long p {
     margin: 0.5rem 0 calc(1rem + 2vmin) 0;
 }
-article.long p:last-child {
+article.long ul {
+	padding-left: calc(1rem + 2vw);
+}
+article.long ul p {
+    margin: 0.5rem 0 0.8rem;
+}
+article.long > :last-child {
     margin-bottom: 5rem;
+}
+article.long img {
+	width: 100%;
+}
+@media (max-width: 400px){
+	article.long picture {
+		display: block;
+		left: calc(-1 * var(--gap-size));
+		width: 100vw;
+		position: relative;
+	}
 }
 
 /* article list */

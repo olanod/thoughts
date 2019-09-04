@@ -1,0 +1,9 @@
+{{ $pic := .Page.Resources.GetMatch (printf "*%s.jpg" (.Get 0)) }}
+<a href="{{ $pic.Permalink }}">
+	<picture>
+		{{ $img := $pic.Resize "400x" }}
+		<source srcset="{{ $img.Permalink }}" media="(max-width: 400px)" />
+		{{ $img := $pic.Resize "800x" }}
+		<img alt="{{ $img.Name }}" src="{{ $img.Permalink }}"/>
+	</picture>
+</a>
