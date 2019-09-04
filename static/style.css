@@ -1,104 +1,105 @@
 :root {
-    --color-main: #09D;
-    --color-main-light: #ACE;
-    --color-bg: #FDFDFD;
-    --color-title: #4D4D4D;
-    --color-text: #222;
-    --color-text-light: #999;
+	--color-main: #09D;
+	--color-main-light: #ACE;
+	--color-bg: #FDFDFD;
+	--color-title: #4D4D4D;
+	--color-text: #222;
+	--color-text-light: #999;
 
-    --text-size: calc(0.85em + 0.3vmin);
-    --text-line-size: calc(var(--text-size) * 1.6);
+	--text-size: calc(0.85em + 0.3vmin);
+	--text-line-size: calc(var(--text-size) * 1.6);
 	--p-margin: calc(1rem + 2vmin);
-    --gap-size: 5vmin;
-    --content-size: calc(40rem + 15vw);
+	--gap-size: 5vmin;
+	--content-size: calc(40rem + 15vw);
 }
 
 html, body { margin: 0; padding: 0 }
 body {
-    background-color: var(--color-bg);
-    background-image:
-    repeating-linear-gradient(-45deg, transparent, transparent 89px, var(--color-text-light) 90px),
-    repeating-linear-gradient(45deg, transparent, transparent 89px, var(--color-text-light) 90px),
-    repeating-linear-gradient(45deg, transparent, transparent 29px, var(--color-main-light) 30px),
-    repeating-linear-gradient(-45deg, transparent, transparent 29px, var(--color-main-light) 30px);
-    color: var(--color-text);
-    display: grid;
-    font-family: sans-serif;
-    grid-template-areas:
-    ". . ."
-    ". main ."
-    ". aside ."
-    "footer footer footer";
-    grid-template-columns: 1fr minmax(0, var(--content-size)) 1fr;
-    grid-template-rows: var(--gap-size) minmax(min-content, 60vh) minmax(var(--gap-size), 1fr) 2.5rem;
-    min-height: 100vh;
-    overflow-x: hidden;
+	background-color: var(--color-bg);
+	background-image:
+	repeating-linear-gradient(-45deg, transparent, transparent 89px, var(--color-text-light) 90px),
+	repeating-linear-gradient(45deg, transparent, transparent 89px, var(--color-text-light) 90px),
+	repeating-linear-gradient(45deg, transparent, transparent 29px, var(--color-main-light) 30px),
+	repeating-linear-gradient(-45deg, transparent, transparent 29px, var(--color-main-light) 30px);
+	color: var(--color-text);
+	display: grid;
+	font-family: sans-serif;
+	grid-template-areas:
+	". . ."
+	". main ."
+	". aside ."
+	"footer footer footer";
+	grid-template-columns: 1fr minmax(0, var(--content-size)) 1fr;
+	grid-template-rows: var(--gap-size) minmax(min-content, 60vh) minmax(var(--gap-size), 1fr) 2.5rem;
+	min-height: 100vh;
+	overflow-x: hidden;
 }
 
 main {
-    background: white;
-    box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.3);
-    box-sizing: border-box;
-    grid-area: main;
-    padding: 1rem var(--gap-size);
+	background: white;
+	box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.3);
+	box-sizing: border-box;
+	grid-area: main;
+	padding: 1rem var(--gap-size);
 }
 
 aside {
-    font-size: calc(var(--text-size) * 0.8);
-    grid-area: aside;
-    text-align: right;
+	font-size: calc(var(--text-size) * 0.8);
+	grid-area: aside;
+	display: flex;
+	justify-content: space-between;
 }
 
 h1, h2, h3, h4, h5 { color: var(--color-title); }
 
 h1 {
-    font-size: calc(1.5em + 4vmin);
-    margin: 2vmin 0;
+	font-size: calc(1.5em + 4vmin);
+	margin: 2vmin 0;
 }
 h2 { margin: var(--p-margin) 0 1rem; }
 h3, h4, h5 { margin: var(--p-margin) 0 0.5rem; }
 
 article {
-    font-size: var(--text-size);
-    line-height: var(--text-line-size);
+	font-size: var(--text-size);
+	line-height: var(--text-line-size);
 }
 
 hr { border: 1px solid var(--color-main); margin: 0.5rem 0 var(--p-margin); }
 
 a {
-    text-decoration: none;
-    color: var(--color-main);
+	text-decoration: none;
+	color: var(--color-main);
 }
 a:hover, a:focus {
-    text-decoration: underline;
-    outline: none;
+	text-decoration: underline;
+	outline: none;
 }
 
 footer {
-    align-items: center;
-    background: linear-gradient(to bottom, var(--color-text), var(--color-text) 50%, var(--color-main) 50%, var(--color-main));
-    color: var(--color-bg);
-    display: flex;
-    grid-area: footer;
-    justify-content: center;
-    position: relative;
+	align-items: center;
+	background: linear-gradient(to bottom, var(--color-text), var(--color-text) 50%, var(--color-main) 50%, var(--color-main));
+	color: var(--color-bg);
+	display: flex;
+	grid-area: footer;
+	justify-content: center;
+	position: relative;
 }
 footer a {
-    color: var(--color-bg);
+	color: var(--color-bg);
 }
 
 /* article detail */
 article.long p {
-    margin: 0.5rem 0 calc(1rem + 2vmin) 0;
+	margin: 0.5rem 0 calc(1rem + 2vmin) 0;
 }
 article.long ul {
 	padding-left: calc(1rem + 2vw);
 }
 article.long ul p {
-    margin: 0.5rem 0 0.8rem;
+	margin: 0.5rem 0 0.8rem;
 }
 article.long > :last-child {
-    margin-bottom: 5rem;
+	margin-bottom: 5rem;
 }
 article.long img {
 	width: 100%;
@@ -114,15 +115,15 @@ article.long img {
 
 /* article list */
 article.summary {
-    margin: calc(1rem + 3vmin) 0;
+	margin: calc(1rem + 3vmin) 0;
 }
 article.summary h2 {
-    margin: 0.4rem 0 0.8rem;
+	margin: 0.4rem 0 0.8rem;
 }
 article.summary p {
-    margin: 0;
+	margin: 0;
 }
 article.summary time {
-    font-size: 0.9em;
-    color: var(--color-text-light)
+	font-size: 0.9em;
+	color: var(--color-text-light)
 }

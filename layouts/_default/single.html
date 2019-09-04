@@ -4,9 +4,13 @@
 
 {{ define "aside" }}
 <aside>
-  <a
-    href="{{ printf "%s/edit/master/content/%s" $.Site.Params.repoURL .File.Path }}"
-    target="_blank"
-    title="Because I'm still a shity writer">Suggest edit ✍️</a>
+	<a
+		href="{{ printf "http://reddit.com/%s" .Page.Permalink }}"
+		target="_blank"
+		title="nice! your precious thoughts are always welcome">Share some thoughts 💬</a>
+	<a
+		href="{{ printf "%s/edit/master/content/%s" $.Site.Params.repoURL .File.Path }}"
+		target="_blank"
+		title="me no good write english">Suggest edit ✍️</a>
 </aside>
 {{ end }}
